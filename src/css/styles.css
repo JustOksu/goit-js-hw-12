@@ -24,41 +24,38 @@
   -webkit-text-size-adjust: 100%;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-}
-
-#search-form {
-  margin-bottom: 20px;
+.search-container {
   display: flex;
   justify-content: center;
+  margin-top: 20px;
 }
 
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   gap: 10px;
+  margin-top: 20px;
 }
 
-.gallery-item {
-  width: calc(33.333% - 10px);
-}
-
-.gallery-item img {
-  width: 100%;
-  height: auto;
+.gallery a {
   display: block;
+  width: 100%;
+  overflow: hidden;
+}
+
+.gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
 .load-more {
   display: block;
   margin: 20px auto;
   padding: 10px 20px;
-  font-size: 16px;
   cursor: pointer;
 }
 
-.is-hidden {
+.hidden {
   display: none;
 }

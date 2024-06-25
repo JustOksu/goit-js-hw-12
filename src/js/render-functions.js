@@ -1,20 +1,22 @@
-export const renderGallery = images => {
-  const gallery = document.querySelector('.gallery');
+export function renderGallery(images, append = false) {
+  const gallery = document.getElementById('gallery');
   const markup = images
     .map(
       image => `
-    <div class="gallery-item">
-      <a href="${image.largeImageURL}">
-        <img src="${image.webformatURL}" alt="${image.tags}" loading="lazy"/>
-      </a>
-    </div>
-  `
+        <a href="${image.largeImageURL}">
+            <img src="${image.webformatURL}" alt="${image.tags}" loading="lazy"/>
+        </a>
+    `
     )
     .join('');
-  gallery.innerHTML += markup;
-};
+  if (append) {
+    gallery.insertAdjacentHTML('beforeend', markup);
+  } else {
+    gallery.innerHTML = markup;
+  }
+}
 
-export const clearGallery = () => {
-  const gallery = document.querySelector('.gallery');
+export function clearGallery() {
+  const gallery = document.getElementById('gallery');
   gallery.innerHTML = '';
-};
+}
