@@ -6,26 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla App Template</title>
     
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/izitoast/dist/css/iziToast.min.css"
+    />
     <script type="module" crossorigin src="/goit-js-hw-12/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/goit-js-hw-12/assets/vendor-4533621d.js">
     <link rel="stylesheet" href="/goit-js-hw-12/assets/vendor-a088063d.css">
-    <link rel="stylesheet" href="/goit-js-hw-12/assets/index-1869be7e.css">
+    <link rel="stylesheet" href="/goit-js-hw-12/assets/index-04f389d8.css">
   </head>
   <body>
-    <form id="search-form">
-      <input
-        type="text"
-        name="searchQuery"
-        placeholder="Search images..."
-        autocomplete="off"
-        required
-      />
-      <button type="submit">Search</button>
-    </form>
-    <div class="gallery"></div>
-    <button class="load-more is-hidden">Load more</button>
-    
-    
+    <div class="search-container">
+      <form id="search-form">
+        <input
+          type="text"
+          id="query"
+          name="query"
+          placeholder="Enter your search term..."
+        />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+    <div id="gallery" class="gallery"></div>
+    <button id="load-more" class="load-more hidden">Load More</button>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/izitoast/dist/js/iziToast.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.1.3/simple-lightbox.min.js"></script> -->
     
   </body>
 </html>
