@@ -8,15 +8,14 @@
 @import url('./vite-promo.css');
 @import url('./header.css');
 
+/* Додаємо загальні стилі для сторінки */
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
-
   color: #242424;
   background-color: rgba(255, 255, 255, 0.87);
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -31,16 +30,17 @@
 }
 
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
   margin-top: 20px;
 }
 
 .gallery a {
   display: block;
-  width: 100%;
-  overflow: hidden;
+  width: calc((100% - 50px) / 5);
+  margin: 5px;
 }
 
 .gallery img {

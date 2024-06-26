@@ -55,6 +55,8 @@ loadMoreBtn.addEventListener('click', async () => {
         title: 'Info',
         message: "We're sorry, but you've reached the end of search results.",
       });
+    } else {
+      scrollSmoothly();
     }
   } catch (error) {
     console.error(error);
@@ -64,3 +66,13 @@ loadMoreBtn.addEventListener('click', async () => {
     });
   }
 });
+
+function scrollSmoothly() {
+  const gallery = document.getElementById('gallery');
+  const { height: cardHeight } =
+    gallery.firstElementChild.getBoundingClientRect();
+  window.scrollBy({
+    top: cardHeight * 2,
+    behavior: 'smooth',
+  });
+}
